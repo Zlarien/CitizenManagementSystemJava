@@ -1,0 +1,55 @@
+import javax.swing.*;
+import java.awt.*;
+public class VueNaissance extends JFrame{
+    Mairie mairie;
+    JLabel labelIdBebe = new JLabel("ID Bebe");
+    JLabel labelNom = new JLabel("Nom");
+    JLabel labelPrenom = new JLabel("Prenom");
+    JLabel labelJour = new JLabel("Jour");
+    JLabel labelMois = new JLabel("Mois");
+    JLabel labelAnnee = new JLabel("Annee");
+    JLabel labelSexe = new JLabel("Sexe H/F");
+    JLabel labelIdMere = new JLabel("ID Mere");
+    JLabel labelIdPere = new JLabel("ID Pere (0 si inconnu)");
+    JLabel message = new JLabel(" ");
+    JTextField champIdBebe = new JTextField();
+    JTextField champNom = new JTextField();
+    JTextField champPrenom = new JTextField();
+    JTextField champJour = new JTextField();
+    JTextField champMois = new JTextField();
+    JTextField champAnnee = new JTextField();
+    JTextField champSexe = new JTextField();
+    JTextField champIdMere = new JTextField();
+    JTextField champIdPere = new JTextField();
+    JButton boutonValider = new JButton("Valider");
+    public VueNaissance(Mairie m){
+        mairie = m;
+        setTitle("Vue Naissance");
+        GridLayout layoutFenetre = new GridLayout(11, 2);
+        setLayout(layoutFenetre);
+        add(labelIdBebe);
+        add(champIdBebe);
+        add(labelNom);
+        add(champNom);
+        add(labelPrenom);
+        add(champPrenom);
+        add(labelJour);
+        add(champJour);
+        add(labelMois);
+        add(champMois);
+        add(labelAnnee);
+        add(champAnnee);
+        add(labelSexe);
+        add(champSexe);
+        add(labelIdMere);
+        add(champIdMere);
+        add(labelIdPere);
+        add(champIdPere);
+        add(message);
+        add(boutonValider);
+        add(new JLabel(""));
+        add(new JLabel(""));
+        ContNaissance ct = new ContNaissance(mairie, champIdBebe, champNom, champPrenom, champJour, champMois, champAnnee, champSexe, champIdMere, champIdPere, message);
+        boutonValider.addActionListener(ct);
+    }
+}
